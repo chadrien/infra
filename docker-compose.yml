@@ -32,7 +32,31 @@ services:
       LETSENCRYPT_HOST: "keeweb.chadrien.fr"
       VIRTUAL_HOST: "keeweb.chadrien.fr"
 
+  wedding-http:
+    build: ./wedding-http
+    links:
+      - wedding-db
+    volumes:
+      - "secrets:/secrets:ro"
+      - "wedding:/app"
+    environment:
+      BUNDLE_APP_CONFIG: /app/.bundle
+      VIRTUAL_HOST: "on-s-ai.me"
+      VIRTUAL_PORT: 3000
+      LETSENCRYPT_HOST: "on-s-ai.me"
+      LETSENCRYPT_EMAIL: "hadrien@decuzey.fr"
+      RAILS_ENV: production
+      RAILS_SERVE_STATIC_FILES: 1
+
+  wedding-db:
+    build: ./wedding-db
+    volumes:
+      - "secrets:/secrets:ro"
+      - "wedding-db:/var/lib/mysql"
+
 volumes:
   secrets:
   nginx:
   nginx-certs:
+  wedding:
+  wedding-db:
