@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 set -e
 
-git clone git@bitbucket.org:chadrien/mariage.git /app
+if [ ! -d /app ]; then
+  git clone git@bitbucket.org:chadrien/mariage.git /app
+fi
 
 cd /app
 
@@ -16,7 +18,7 @@ default: &default
   pool: 5
   username: ${WEDDING_MYSQL_USER}
   password: ${WEDDING_MYSQL_PASSWORD}
-  host: db
+  host: wedding-db
   database: ${WEDDING_MYSQL_DATABASE}
 production:
   <<: *default
