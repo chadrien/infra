@@ -1,4 +1,4 @@
-FROM mysal
+FROM mysql
 
 RUN ln -s /secrets/.env /root/.env
 
