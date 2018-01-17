@@ -1,6 +1,7 @@
 FROM rails
 
-RUN ln -s /secrets/.ssh /root/.ssh
+RUN ln -s /secrets/.ssh /root/.ssh && \
+    ssh-keyscan -t rsa bitbucket.org >> /root/.ssh/known_hosts
 RUN git clone git@bitbucket.org:chadrien/mariage.git /app
 RUN ln -s /secrets/.env /app/.env
 
