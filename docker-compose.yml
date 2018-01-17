@@ -38,9 +38,8 @@ services:
       - wedding-db
     volumes:
       - "secrets:/secrets:ro"
-      - "wedding:/data"
     environment:
-      BUNDLE_APP_CONFIG: /data/app/.bundle
+      BUNDLE_APP_CONFIG: /app/.bundle
       VIRTUAL_HOST: "on-s-ai.me"
       VIRTUAL_PORT: 3000
       LETSENCRYPT_HOST: "on-s-ai.me"
@@ -58,5 +57,4 @@ volumes:
   secrets:
   nginx:
   nginx-certs:
-  wedding:
   wedding-db:
