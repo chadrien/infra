@@ -1,11 +1,11 @@
 FROM rails
 
-WORKDIR /app
+WORKDIR /data/app
 
 RUN ln -s /secrets/.ssh /root/.ssh && \
     ln -s /secrets/.env /app/.env
 
-RUN git clone git@bitbucket.org:chadrien/mariage.git /app
+RUN git clone git@bitbucket.org:chadrien/mariage.git /data/app
 
 COPY ./docker-entrypoint.sh /docker-entrypoint.sh
 
