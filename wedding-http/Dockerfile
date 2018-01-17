@@ -5,7 +5,7 @@ WORKDIR /data/app
 RUN ln -s /secrets/.ssh /root/.ssh && \
     ln -s /secrets/.env /data/app/.env
 
-RUN ! -d /data/app && git clone git@bitbucket.org:chadrien/mariage.git /data/app && \
+RUN [ ! -d /data/app ] && git clone git@bitbucket.org:chadrien/mariage.git /data/app && \
     git pull --rebase
 
 COPY ./docker-entrypoint.sh /docker-entrypoint.sh
