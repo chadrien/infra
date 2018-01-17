@@ -5,7 +5,7 @@ git clone git@bitbucket.org:chadrien/mariage.git /app
 
 cd /app
 
-source .env
+source /root/.env
 export SECRET_KEY_BASE=$WEDDING_SECRET_KEY_BASE
 export DROPBOX_ACCESS_TOKEN=$WEDDING_DROPBOX_ACCESS_TOKEN
 

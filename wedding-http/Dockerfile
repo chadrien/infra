@@ -1,7 +1,7 @@
 FROM rails
 
 RUN ln -s /secrets/.ssh /root/.ssh && \
-    ln -s /secrets/.env /app/.env
+    ln -s /secrets/.env /root/.env
 
 COPY ./docker-entrypoint.sh /docker-entrypoint.sh
 
