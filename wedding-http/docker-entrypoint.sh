@@ -11,7 +11,7 @@ source /root/.env
 export SECRET_KEY_BASE=$WEDDING_SECRET_KEY_BASE
 export DROPBOX_ACCESS_TOKEN=$WEDDING_DROPBOX_ACCESS_TOKEN
 
-cat > database.yml <<EOF
+cat > config/database.yml <<EOF
 default: &default
   adapter: mysql2
   encoding: utf8
