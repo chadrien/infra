@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -e
 
+cd /app
+
 source .env
 export SECRET_KEY_BASE=$WEDDING_SECRET_KEY_BASE
 export DROPBOX_ACCESS_TOKEN=$WEDDING_DROPBOX_ACCESS_TOKEN
