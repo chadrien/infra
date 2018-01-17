@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
-source .env
+source /root/.env
 export MYSQL_ROOT_PASSWORD=$WEDDING_MYSQL_ROOT_PASSWORD
 export MYSQL_USER=$WEDDING_MYSQL_USER
 export MYSQL_PASSWORD=$WEDDING_MYSQL_PASSWORD
