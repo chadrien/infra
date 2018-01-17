@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -e
 
+git clone git@bitbucket.org:chadrien/mariage.git /app
+
 cd /app
 
 source .env
