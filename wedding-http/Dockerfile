@@ -3,7 +3,7 @@ FROM rails
 WORKDIR /data/app
 
 RUN ln -s /secrets/.ssh /root/.ssh && \
-    ln -s /secrets/.env /app/.env
+    ln -s /secrets/.env /data/app/.env
 
 RUN git clone git@bitbucket.org:chadrien/mariage.git /data/app
 
